@@ -59,7 +59,11 @@ function singleRound(playerSelection, computerSelection) {
 // console.log(playerChoice);
 // console.log(playerSelection);
 
-function game() {
+// Create a score keeper
+let computerScore = 0;
+let playerScore = 0;
+
+function round() {
 	playerChoice = prompt('Enter your choice');
 	playerSelection = playerChoice.toLowerCase();
 	if (
@@ -71,6 +75,11 @@ function game() {
 	} else {
 		console.log(singleRound(playerSelection, computerSelection));
 	}
+	console.log(`Computer Score: ${computerScore}`);
+	console.log(`Player Score: ${playerScore}`);
 }
 
-game();
+// Create function that plays 5 games in a row
+for (let i = 0; i < 5; i++) {
+	round();
+}
