@@ -62,7 +62,15 @@ function singleRound(playerSelection, computerSelection) {
 function game() {
 	playerChoice = prompt('Enter your choice');
 	playerSelection = playerChoice.toLowerCase();
-	console.log(singleRound(playerSelection, computerSelection));
+	if (
+		playerSelection != 'rock' &&
+		playerSelection != 'paper' &&
+		playerSelection != 'scissors'
+	) {
+		console.log('That is not an option');
+	} else {
+		console.log(singleRound(playerSelection, computerSelection));
+	}
 }
 
 game();
