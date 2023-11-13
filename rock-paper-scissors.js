@@ -1,11 +1,8 @@
-// Create a function where computer chooses between 1-3
 var computerChoice;
 
 function getComputerChoice() {
 	computerChoice = Math.floor(Math.random() * 3 + 1);
 }
-
-// Number relates to either rock paper or scissors
 
 function getComputerSelection() {
 	if (computerChoice === 1) {
@@ -17,7 +14,6 @@ function getComputerSelection() {
 	}
 }
 
-// Create a function for a round of r-p-s
 function singleRound() {
 	let outputString = `You chose ${playerSelection} and the computer chose ${computerSelection}.`;
 	if (playerSelection === computerSelection) {
@@ -42,11 +38,9 @@ function singleRound() {
 	}
 }
 
-// Create a score keeper
 let computerScore = 0;
 let playerScore = 0;
 
-// Chooses if input is valid or not then goes through the round
 function start() {
 	playerChoice = prompt('Enter your choice');
 	playerSelection = playerChoice.toLowerCase();
@@ -63,7 +57,6 @@ function start() {
 	console.log(`Player Score: ${playerScore}`);
 }
 
-// Create function that plays 5 games in a row
 function game() {
 	for (let i = 0; i < 5; i++) {
 		getComputerChoice();
