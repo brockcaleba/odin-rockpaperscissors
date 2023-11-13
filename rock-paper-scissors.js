@@ -1,20 +1,13 @@
 // Create a function where computer chooses between 1-3
+var computerChoice;
 
 function getComputerChoice() {
-	return Math.floor(Math.random() * 3 + 1);
+	computerChoice = Math.floor(Math.random() * 3 + 1);
 }
-
-// console.log(getComputerChoice());
-
-// Save choice as a variable
-
-computerChoice = getComputerChoice();
-
-// console.log(computerChoice);
 
 // Number relates to either rock paper or scissors
 
-function getComputerSelection(computerChoice) {
+function getComputerSelection() {
 	if (computerChoice === 1) {
 		computerSelection = 'rock';
 	} else if (computerChoice === 2) {
@@ -24,12 +17,8 @@ function getComputerSelection(computerChoice) {
 	}
 }
 
-// console.log(computerChoice);
-// console.log(computerSelection);
-
 // Create a function for a round of r-p-s
-function singleRound(playerSelection, computerChoice) {
-	getComputerSelection(computerChoice);
+function singleRound() {
 	let outputString = `You chose ${playerSelection} and the computer chose ${computerSelection}.`;
 	if (playerSelection === computerSelection) {
 		return `${outputString} It's a draw!`;
@@ -53,26 +42,12 @@ function singleRound(playerSelection, computerChoice) {
 	}
 }
 
-// const playerSelection = 'Scissors';
-// const computerSelection = 'Rock';
-// console.log(singleRound(playerSelection, computerSelection));
-
-// Get users choice
-// playerChoice = prompt('Enter your choice');
-
-// Change users choice to lowercase
-// playerSelection = playerChoice.toLowerCase();
-
-// console.log(playerChoice);
-// console.log(playerSelection);
-
 // Create a score keeper
 let computerScore = 0;
 let playerScore = 0;
 
-function round() {
-	getComputerChoice();
-	getComputerSelection(computerChoice);
+// Chooses if input is valid or not then goes through the round
+function start() {
 	playerChoice = prompt('Enter your choice');
 	playerSelection = playerChoice.toLowerCase();
 	if (
@@ -82,7 +57,7 @@ function round() {
 	) {
 		console.log('That is not an option');
 	} else {
-		console.log(singleRound(playerSelection, computerChoice));
+		console.log(singleRound());
 	}
 	console.log(`Computer Score: ${computerScore}`);
 	console.log(`Player Score: ${playerScore}`);
@@ -91,7 +66,9 @@ function round() {
 // Create function that plays 5 games in a row
 function game() {
 	for (let i = 0; i < 5; i++) {
-		round();
+		getComputerChoice();
+		getComputerSelection();
+		start();
 	}
 	if (computerScore > playerScore) {
 		console.log(
