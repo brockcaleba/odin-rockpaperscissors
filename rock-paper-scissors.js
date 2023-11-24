@@ -64,28 +64,20 @@ function scoreBoard() {
 	// getComputerSelection();
 	// start();
 	if (computerScore > playerScore) {
-		console.log(
-			`Computer: ${computerScore} | Player: ${playerScore} -- The computer wins`
-		);
+		return `Computer: ${computerScore} | Player: ${playerScore} -- The computer wins`;
 	} else if (playerScore > computerScore) {
-		console.log(
-			`Computer: ${computerScore} | Player: ${playerScore} -- The player wins`
-		);
+		return `Computer: ${computerScore} | Player: ${playerScore} -- The player wins`;
 	} else if (playerScore === computerScore) {
-		console.log(
-			`Computer: ${computerScore} | Player: ${playerScore} -- It's a tie`
-		);
+		return `Computer: ${computerScore} | Player: ${playerScore} -- It's a tie`;
 	}
 }
-
-// game();
 
 const rockButton = document.querySelector('#rockButton');
 rockButton.addEventListener('click', () => {
 	// console.log('Rock Button was clicked');
 	playerSelection = 'rock';
 	console.log(singleRound());
-	scoreBoard();
+	console.log(scoreBoard());
 });
 
 const paperButton = document.querySelector('#paperButton');
@@ -93,7 +85,7 @@ paperButton.addEventListener('click', () => {
 	// console.log('Paper Button was clicked');
 	playerSelection = 'paper';
 	console.log(singleRound());
-	scoreBoard();
+	console.log(scoreBoard());
 });
 
 const scissorsButton = document.querySelector('#scissorsButton');
@@ -101,7 +93,7 @@ scissorsButton.addEventListener('click', () => {
 	// console.log('Scissors Button was clicked');
 	playerSelection = 'scissors';
 	console.log(singleRound());
-	scoreBoard();
+	console.log(scoreBoard());
 });
 
 const results = document.querySelector('#results');
