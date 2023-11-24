@@ -4,6 +4,7 @@ let playerScore = 0;
 let playerChoice = '';
 let playerSelection = '';
 let highestScore = 5;
+let gameOverMessage = 'The game is over, refresh to play again';
 
 function getComputerChoice() {
 	computerChoice = Math.floor(Math.random() * 3 + 1);
@@ -24,7 +25,8 @@ function singleRound() {
 	getComputerSelection();
 	let outputString = `You chose ${playerSelection} and the computer chose ${computerSelection}.`;
 	if (playerScore === highestScore || computerScore === highestScore) {
-		return 'The game is over, refresh to play again';
+		buttons.append(restartButton);
+		return `${gameOverMessage}`;
 	} else if (playerSelection === computerSelection) {
 		return `${outputString}`;
 	} else if (playerSelection === 'rock' && computerSelection === 'paper') {
@@ -96,3 +98,11 @@ score.textContent = scoreBoard();
 
 container.append(round);
 container.append(score);
+
+const buttons = document.querySelector('#buttons');
+const restartButton = document.createElement('button');
+restartButton.textContent = `Restart?`;
+
+restartButton.addEventListener('click', () => {
+	location.reload();
+});
