@@ -1,4 +1,9 @@
 var computerChoice;
+let computerScore = 0;
+let playerScore = 0;
+let playerChoice = '';
+let playerSelection = '';
+let highestScore = 5;
 
 function getComputerChoice() {
 	computerChoice = Math.floor(Math.random() * 3 + 1);
@@ -18,7 +23,9 @@ function singleRound() {
 	getComputerChoice();
 	getComputerSelection();
 	let outputString = `You chose ${playerSelection} and the computer chose ${computerSelection}.`;
-	if (playerSelection === computerSelection) {
+	if (playerScore === highestScore || computerScore === highestScore) {
+		return 'The game is over, refresh to play again';
+	} else if (playerSelection === computerSelection) {
 		return `${outputString} It's a draw!`;
 	} else if (playerSelection === 'rock' && computerSelection === 'paper') {
 		computerScore++;
@@ -40,16 +47,17 @@ function singleRound() {
 	}
 }
 
-let computerScore = 0;
-let playerScore = 0;
-let playerChoice = '';
-let playerSelection = '';
-
 function scoreBoard() {
-	if (computerScore > playerScore) {
-		return `Computer: ${computerScore} | Player: ${playerScore} -- The computer is winning`;
+	if (computerScore === 0 && playerScore === 0) {
+		return 'Make your choice to start the game';
+	} else if (computerScore === highestScore) {
+		return `Computer: ${computerScore} | Player: ${playerScore} -- The computer wins!`;
+	} else if (playerScore === highestScore) {
+		return `Computer: ${computerScore} | Player: ${playerScore} -- You win!`;
+	} else if (computerScore > playerScore) {
+		return `Computer: ${computerScore} | Player: ${playerScore} -- The computer is winning!`;
 	} else if (playerScore > computerScore) {
-		return `Computer: ${computerScore} | Player: ${playerScore} -- You are winning`;
+		return `Computer: ${computerScore} | Player: ${playerScore} -- You are winning!`;
 	} else if (playerScore === computerScore) {
 		return `Computer: ${computerScore} | Player: ${playerScore} -- It's a tie`;
 	}
