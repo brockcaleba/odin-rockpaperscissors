@@ -66,9 +66,9 @@ function scoreBoard() {
 	// getComputerSelection();
 	// start();
 	if (computerScore > playerScore) {
-		return `Computer: ${computerScore} | Player: ${playerScore} -- The computer wins`;
+		return `Computer: ${computerScore} | Player: ${playerScore} -- The computer is winning`;
 	} else if (playerScore > computerScore) {
-		return `Computer: ${computerScore} | Player: ${playerScore} -- The player wins`;
+		return `Computer: ${computerScore} | Player: ${playerScore} -- You are winning`;
 	} else if (playerScore === computerScore) {
 		return `Computer: ${computerScore} | Player: ${playerScore} -- It's a tie`;
 	}
