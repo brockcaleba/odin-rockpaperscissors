@@ -45,26 +45,7 @@ let playerScore = 0;
 let playerChoice = '';
 let playerSelection = '';
 
-// function start() {
-// 	playerChoice = prompt('Enter your choice');
-// 	playerSelection = playerChoice.toLowerCase();
-// 	if (
-// 		playerSelection != 'rock' &&
-// 		playerSelection != 'paper' &&
-// 		playerSelection != 'scissors'
-// 	) {
-// 		console.log('That is not an option');
-// 	} else {
-// 		console.log(singleRound());
-// 	}
-// 	console.log(`Computer Score: ${computerScore}`);
-// 	console.log(`Player Score: ${playerScore}`);
-// }
-
 function scoreBoard() {
-	// getComputerChoice();
-	// getComputerSelection();
-	// start();
 	if (computerScore > playerScore) {
 		return `Computer: ${computerScore} | Player: ${playerScore} -- The computer is winning`;
 	} else if (playerScore > computerScore) {
@@ -76,7 +57,6 @@ function scoreBoard() {
 
 const rockButton = document.querySelector('#rockButton');
 rockButton.addEventListener('click', () => {
-	// console.log('Rock Button was clicked');
 	playerSelection = 'rock';
 	round.textContent = singleRound();
 	score.textContent = scoreBoard();
@@ -84,7 +64,6 @@ rockButton.addEventListener('click', () => {
 
 const paperButton = document.querySelector('#paperButton');
 paperButton.addEventListener('click', () => {
-	// console.log('Paper Button was clicked');
 	playerSelection = 'paper';
 	round.textContent = singleRound();
 	score.textContent = scoreBoard();
@@ -92,26 +71,20 @@ paperButton.addEventListener('click', () => {
 
 const scissorsButton = document.querySelector('#scissorsButton');
 scissorsButton.addEventListener('click', () => {
-	// console.log('Scissors Button was clicked');
 	playerSelection = 'scissors';
-	// console.log(singleRound());
-	// console.log(scoreBoard());
 	round.textContent = singleRound();
 	score.textContent = scoreBoard();
 });
 
 const container = document.querySelector('#results');
-// console.log(container);
+
 const round = document.createElement('div');
 round.classList.add('round');
 round.textContent = singleRound();
+
 const score = document.createElement('div');
 score.classList.add('score');
 score.textContent = scoreBoard();
-// console.log(results);
+
 container.append(round);
 container.append(score);
-// // const outputResults = document.createElement('div');
-// results.setAttruibute('id', 'newResult');
-// results.innerText('Test');
-// results.textContent('TestTwo');
