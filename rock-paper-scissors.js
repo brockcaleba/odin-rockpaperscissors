@@ -101,6 +101,7 @@ container.append(score);
 
 const buttons = document.querySelector('#buttons');
 const restartButton = document.createElement('button');
+restartButton.classList.add('restartButton');
 restartButton.textContent = `Restart?`;
 
 restartButton.addEventListener('click', () => {
