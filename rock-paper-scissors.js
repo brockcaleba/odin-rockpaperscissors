@@ -26,40 +26,40 @@ function singleRound() {
 	if (playerScore === highestScore || computerScore === highestScore) {
 		return 'The game is over, refresh to play again';
 	} else if (playerSelection === computerSelection) {
-		return `${outputString} It's a draw!`;
+		return `${outputString}`;
 	} else if (playerSelection === 'rock' && computerSelection === 'paper') {
 		computerScore++;
-		return `${outputString} Computer wins!`;
+		return `${outputString}`;
 	} else if (
 		playerSelection === 'paper' &&
 		computerSelection === 'scissors'
 	) {
 		computerScore++;
-		return `${outputString} Computer wins!`;
+		return `${outputString}`;
 	} else if (playerSelection === 'scissors' && computerSelection === 'rock') {
 		computerScore++;
-		return `${outputString} Computer wins!`;
+		return `${outputString}`;
 	} else if (playerSelection === '') {
 		return;
 	} else {
 		playerScore++;
-		return `${outputString} You win!`;
+		return `${outputString}`;
 	}
 }
 
 function scoreBoard() {
 	if (computerScore === 0 && playerScore === 0) {
-		return 'Make your choice to start the game';
+		return 'Make your choice to score a point';
 	} else if (computerScore === highestScore) {
 		return `Computer: ${computerScore} | Player: ${playerScore} -- The computer wins!`;
 	} else if (playerScore === highestScore) {
 		return `Computer: ${computerScore} | Player: ${playerScore} -- You win!`;
 	} else if (computerScore > playerScore) {
-		return `Computer: ${computerScore} | Player: ${playerScore} -- The computer is winning!`;
+		return `Computer: ${computerScore} | Player: ${playerScore}`;
 	} else if (playerScore > computerScore) {
-		return `Computer: ${computerScore} | Player: ${playerScore} -- You are winning!`;
+		return `Computer: ${computerScore} | Player: ${playerScore}`;
 	} else if (playerScore === computerScore) {
-		return `Computer: ${computerScore} | Player: ${playerScore} -- It's a tie`;
+		return `Computer: ${computerScore} | Player: ${playerScore}`;
 	}
 }
 
