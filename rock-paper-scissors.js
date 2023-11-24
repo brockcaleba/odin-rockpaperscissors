@@ -59,9 +59,9 @@ let playerScore = 0;
 // 	console.log(`Player Score: ${playerScore}`);
 // }
 
-function game() {
-	getComputerChoice();
-	getComputerSelection();
+function scoreBoard() {
+	// getComputerChoice();
+	// getComputerSelection();
 	// start();
 	if (computerScore > playerScore) {
 		console.log(
@@ -85,7 +85,7 @@ rockButton.addEventListener('click', () => {
 	// console.log('Rock Button was clicked');
 	playerSelection = 'rock';
 	console.log(singleRound());
-	game();
+	scoreBoard();
 });
 
 const paperButton = document.querySelector('#paperButton');
@@ -93,7 +93,7 @@ paperButton.addEventListener('click', () => {
 	// console.log('Paper Button was clicked');
 	playerSelection = 'paper';
 	console.log(singleRound());
-	game();
+	scoreBoard();
 });
 
 const scissorsButton = document.querySelector('#scissorsButton');
@@ -101,5 +101,7 @@ scissorsButton.addEventListener('click', () => {
 	// console.log('Scissors Button was clicked');
 	playerSelection = 'scissors';
 	console.log(singleRound());
-	game();
+	scoreBoard();
 });
+
+const results = document.querySelector('#results');
