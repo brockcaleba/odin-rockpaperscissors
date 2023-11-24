@@ -76,4 +76,22 @@ function game() {
 	}
 }
 
-game();
+// game();
+
+const rockButton = document.querySelector('#rockButton');
+console.log(rockButton);
+rockButton.addEventListener('click', () => {
+	console.log('Rock Button was clicked');
+});
+
+const paperButton = document.querySelector('#paperButton');
+console.log(paperButton);
+paperButton.addEventListener('click', () => {
+	console.log('Paper Button was clicked');
+});
+
+const scissorsButton = document.querySelector('#scissorsButton');
+console.log(scissorsButton);
+scissorsButton.addEventListener('click', () => {
+	console.log('Scissors Button was clicked');
+});
