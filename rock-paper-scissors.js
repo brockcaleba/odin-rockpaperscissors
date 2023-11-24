@@ -58,11 +58,9 @@ function start() {
 }
 
 function game() {
-	for (let i = 0; i < 5; i++) {
-		getComputerChoice();
-		getComputerSelection();
-		start();
-	}
+	getComputerChoice();
+	getComputerSelection();
+	start();
 	if (computerScore > playerScore) {
 		console.log(
 			`Computer: ${computerScore} | Player: ${playerScore} -- The computer wins`
